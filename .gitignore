@@ -1,4 +1,4 @@
 .idea/
-task_2/events.csv
-parser_decathlon/velosport.csv
 __pycache__/
+parser_GB/events.csv
+parser_lerua/data.csv

@@ -12,7 +12,7 @@ def get_html(url, params=''):
 
 
 def get_content(html):
-    soup = BeautifulSoup(html, 'html.parser')
+    soup = BeautifulSoup(html, 'html')
     items = soup.find_all('div', class_='gb-event-info')
     events = []
 
@@ -20,7 +20,6 @@ def get_content(html):
         events.append(
             {
                 'title': item.find('h3', class_='gb-event-info__title').get_text(strip=True),
-                'date_time': item.find('div', class_='gb-event-info__datetime'),
                 'link_event': settings.HOST + item.find('h3', class_='gb-event-info__title').find('a').get('href'),
                 'author': item.find('a', class_='gb-event-info__author').get_text(strip=True)
             }
@@ -31,9 +30,9 @@ def get_content(html):
 def save_doc(items, path):
     with open(path, 'w', newline='') as file:
         writer = csv.writer(file, delimiter=';')
-        writer.writerow(['Название мероприятия', 'Время', 'Ссылка на мероприятие', 'Автор'])
+        writer.writerow(['Название мероприятия', 'Ссылка на мероприятие', 'Автор'])
         for item in items:
-            writer.writerow([item['title'], item['date_time'], item['link_event'], item['author']])
+            writer.writerow([item['title'], item['link_event'], item['author']])
 
 
 def parser():
