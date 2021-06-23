@@ -2,3 +2,5 @@
 __pycache__/
 parser_GB/events.csv
 parser_lerua/data.csv
+parser_lerua/main.exe
+parser_kixbox/data_clothes.csv

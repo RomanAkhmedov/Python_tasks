@@ -46,5 +46,3 @@ def save_doc(items, path):
 if __name__ == '__main__':
     data_set = get_data(9)
     save_doc(data_set, CSV)
-
-
