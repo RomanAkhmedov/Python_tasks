@@ -4,3 +4,7 @@ parser_GB/events.csv
 parser_lerua/data.csv
 parser_lerua/main.exe
 parser_kixbox/data_clothes.csv
+parser_kixbox/main.exe
+parser_armaseti/
+parser_garmin/garmin.html
+parser_garmin/garmin_devices.csv

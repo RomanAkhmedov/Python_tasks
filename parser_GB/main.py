@@ -12,7 +12,7 @@ def get_html(url, params=''):
 
 
 def get_content(html):
-    soup = BeautifulSoup(html, 'html')
+    soup = BeautifulSoup(html, 'lxml')
     items = soup.find_all('div', class_='gb-event-info')
     events = []
 
@@ -28,7 +28,7 @@ def get_content(html):
 
 
 def save_doc(items, path):
-    with open(path, 'w', newline='') as file:
+    with open(path, 'w', newline='', encoding='cp1251') as file:
         writer = csv.writer(file, delimiter=';')
         writer.writerow(['Название мероприятия', 'Ссылка на мероприятие', 'Автор'])
         for item in items:
